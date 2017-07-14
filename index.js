@@ -20,7 +20,7 @@ module.exports = function(content) {
 
 		content = content.replace(/"/g, "'");
 		content = content.replace(/\s+/g, " ");
-		content = content.replace(/[{}\|\\\^~\[\]`"<>#%]/g, function(match) {
+		content = content.replace(/[{}\|\\\^~\[\]`"<>#%\(\)]/g, function(match) {
 			return '%'+match[0].charCodeAt(0).toString(16).toUpperCase();
 		});
 
